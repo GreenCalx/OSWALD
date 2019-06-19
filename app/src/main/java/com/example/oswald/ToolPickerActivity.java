@@ -33,6 +33,23 @@ public class ToolPickerActivity extends AppCompatActivity
                     );
         }
 
+        Button button_rules = (Button) findViewById(R.id.button_rules);
+        if ( button_rules != null )
+        {
+            button_rules.setOnClickListener
+                    (
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(ToolPickerActivity.this, PDFReaderActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+
+                    );
+        }
+
     }//! onCreate()
 
 }

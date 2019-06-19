@@ -23,5 +23,11 @@
             android:layout_height="wrap_content"
             android:text="Bestiary" />
 
+        <Button
+            android:id="@+id/button_rules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RULEZ" />
+
     </LinearLayout>
 </LinearLayout>
