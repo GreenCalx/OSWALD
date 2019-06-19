@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="creature_skill_combat">Combat</string>
+    <string name="creature_skill_mystical">Mystical</string>
+    <string name="creature_skill_subterfuge">Subterfuge</string>
+    <string name="creature_skill_trickery">Trickery</string>
+
+    <string-array name="creature_skills" >
+
+        <item>@string/creature_skill_combat</item>
+        <item>@string/creature_skill_mystical</item>
+        <item>@string/creature_skill_subterfuge</item>
+        <item>@string/creature_skill_trickery</item>
+
+    </string-array>
+
+</resources>
