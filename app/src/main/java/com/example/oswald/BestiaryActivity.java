@@ -63,6 +63,15 @@ public class BestiaryActivity extends AppCompatActivity
         // --------------------
     }//! OnCreate
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(BestiaryActivity.this, ToolPickerActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        finish();
+    }//! onCreate
+
     private Monster getMonsterFromMonsterTag(String iMonsterTag)
     {
         Monster retVal = null;

@@ -1,5 +1,6 @@
 package com.example.oswald;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.widget.TextView;
@@ -35,5 +36,14 @@ public class CreatureCardActivity extends AppCompatActivity {
 
         }
 
+    }//! onCreate
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i = new Intent(CreatureCardActivity.this, BestiaryActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i);
+        finish();
     }//! onCreate
 }
