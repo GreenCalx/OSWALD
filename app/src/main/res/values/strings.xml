@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">OSWALD</string>
+
+    <!-- BESTIARY -->
+
+    <string name="bundle_monster">MNSTR_BDL</string>
+
+
+    <!--==========================================-->
+
 </resources>

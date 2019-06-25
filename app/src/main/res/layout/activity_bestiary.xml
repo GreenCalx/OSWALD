@@ -10,14 +10,9 @@
         android:text="BESTIARY"
         android:textSize="36sp" />
 
-    <ScrollView
+    <ListView
+        android:id="@+id/monster_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"/>
-    </ScrollView>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

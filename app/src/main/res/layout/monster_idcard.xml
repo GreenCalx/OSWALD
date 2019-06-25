@@ -47,7 +47,7 @@
                 android:id="@+id/imageView"
                 android:layout_width="102dp"
                 android:layout_height="138dp"
-                app:srcCompat="@drawable/HP_EN" />
+                app:srcCompat="@drawable/hp_en" />
 
             <TextView
                 android:id="@+id/text_hp"
