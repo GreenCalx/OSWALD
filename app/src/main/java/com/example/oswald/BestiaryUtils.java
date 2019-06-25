@@ -17,7 +17,7 @@ public class BestiaryUtils {
 
     public static HashMap<Monster.enumSTATS,Integer> generateCounters(int iHP, int iEnergy)
     {
-        HashMap<Monster.enumSTATS,Integer> ret = new HashMap<>(4);
+        HashMap<Monster.enumSTATS,Integer> ret = new HashMap<>(2);
         ret.put(Monster.enumSTATS.HP, iHP);
         ret.put(Monster.enumSTATS.EN, iEnergy);
 

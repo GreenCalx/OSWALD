@@ -97,9 +97,9 @@ public class Monster implements Parcelable {
         int_datas[2] = skills.get(enumSKILLS.COMBAT);
         int_datas[3] = skills.get(enumSKILLS.MYSTICAL);
         int_datas[4] = skills.get(enumSKILLS.SUBTERFUGE);
-        int_datas[4] = skills.get(enumSKILLS.TRICKERY);
-        int_datas[5] = COUNTERS.get(enumSTATS.HP);
-        int_datas[6] = COUNTERS.get(enumSTATS.EN);
+        int_datas[5] = skills.get(enumSKILLS.TRICKERY);
+        int_datas[6] = COUNTERS.get(enumSTATS.HP);
+        int_datas[7] = COUNTERS.get(enumSTATS.EN);
         parcel.writeIntArray(int_datas);
 
         String[] str_datas = new String[N_LORE_ATTR];
@@ -132,7 +132,7 @@ public class Monster implements Parcelable {
     HashMap<enumSKILLS, Integer>    skills;
 
     /// LORE
-    public final int N_LORE_ATTR = 2;
+    public final int N_LORE_ATTR    = 2;
     public String   name            ="";
     public String   description     ="";
     public String   type            ="";
@@ -158,6 +158,7 @@ public class Monster implements Parcelable {
         Arrays.asList( enumSKILLS.values() ).forEach(skill -> skills.put( skill, ORDERED_SKILLS.get(skill) ));
 
         attributes = new ArrayList<>( FD * 2 );
+
     }
 
     @Override

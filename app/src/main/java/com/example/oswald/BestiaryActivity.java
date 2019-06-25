@@ -20,18 +20,33 @@ public class BestiaryActivity extends AppCompatActivity
 {
     public Monster[] monsters;
 
+    private void generateTestMonsterSet()
+    {
+        HashMap<Monster.enumSKILLS,Integer> skills = BestiaryUtils.generateSkills(1, 2,2,3);
+        HashMap<Monster.enumSTATS,Integer> stats = BestiaryUtils.generateCounters(5,2);
+
+        Monster m1 = new Monster(1, 1, stats, skills);
+        m1.name = "Tommy the Mobster";
+        m1.description = "fagz";
+
+        Monster m2 = new Monster(2, 2, stats, skills);
+        m2.name = "Omar the Lobster";
+        m2.description = "big fag";
+
+        Monster m3 = new Monster(5, 10, stats, skills);
+        m3.name = "Glob the Zdob";
+        m3.description = "ultra fag !!! alert alert";
+
+        monsters = new Monster[]{m1, m2, m3};
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bestiary);
 
         // TEST A MONSTER
-        HashMap<Monster.enumSKILLS,Integer> skills = BestiaryUtils.generateSkills(1, 2,2,3);
-        HashMap<Monster.enumSTATS,Integer> stats = BestiaryUtils.generateCounters(5,2);
-        Monster m = new Monster(1, 1, stats, skills);
-        m.name = "Tommy the Mobster";
-        m.description = "fagz";
-        monsters = new Monster[]{m};
+        generateTestMonsterSet();
 
         ArrayAdapter<Monster> arrayAdapter
                 = new ArrayAdapter<Monster>(this, android.R.layout.simple_list_item_1 , monsters);

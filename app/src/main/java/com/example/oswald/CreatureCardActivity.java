@@ -33,6 +33,10 @@ public class CreatureCardActivity extends AppCompatActivity {
             String str_en = String.valueOf(monster.energy);
             tv_en.setText(str_en);
 
+            TextView tv_save = (TextView) findViewById(R.id.text_save);
+            String str_save = String.valueOf(monster.save);
+            tv_save.setText(str_save);
+
 
         }
 
