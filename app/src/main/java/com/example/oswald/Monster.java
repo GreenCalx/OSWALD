@@ -27,8 +27,8 @@ public class Monster implements Parcelable {
     //      7           ENERGY      INT
     //
     //  STRING[]
-    //  0   STRING      MONSTER_NAME
-    //  1   STRING      DESCRIPTION
+    //  0   NAME        STRING
+    //  1   DESCRIPTION STRING
     // -------------------------------------------------------------------
     protected Monster(Parcel in) {
 

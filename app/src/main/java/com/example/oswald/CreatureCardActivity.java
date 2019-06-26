@@ -2,7 +2,6 @@ package com.example.oswald;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcel;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -36,6 +35,14 @@ public class CreatureCardActivity extends AppCompatActivity {
             TextView tv_save = (TextView) findViewById(R.id.text_save);
             String str_save = String.valueOf(monster.save);
             tv_save.setText(str_save);
+
+            TextView tv_fd = (TextView) findViewById(R.id.text_fd);
+            String str_fd = String.valueOf(monster.FD);
+            tv_fd.setText(str_fd);
+
+            TextView tv_lvl = (TextView) findViewById(R.id.text_lvl);
+            String str_lvl = String.valueOf(monster.LVL);
+            tv_lvl.setText(str_lvl);
 
 
         }
