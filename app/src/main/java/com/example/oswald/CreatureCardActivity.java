@@ -43,7 +43,25 @@ public class CreatureCardActivity extends AppCompatActivity {
             TextView tv_lvl = (TextView) findViewById(R.id.text_lvl);
             String str_lvl = String.valueOf(monster.LVL);
             tv_lvl.setText(str_lvl);
+            // -------------------------------------------------------
+            // SKILLS VALUES
+            TextView tv_combat = (TextView) findViewById(R.id.text_combatvalue);
+            String str_combat = String.valueOf(monster.getCombatScore());
+            tv_combat.setText(str_combat);
 
+            TextView tv_mystical = (TextView) findViewById(R.id.text_mysticalvalue);
+            String str_mystical = String.valueOf(monster.getMysticalScore());
+            tv_mystical.setText(str_mystical);
+
+            TextView tv_subterfuge = (TextView) findViewById(R.id.text_subterfugevalue);
+            String str_subterfuge = String.valueOf(monster.getSubterfugeScore());
+            tv_subterfuge.setText(str_subterfuge);
+
+            TextView tv_trickery = (TextView) findViewById(R.id.text_trickeryalue);
+            String str_trickery = String.valueOf(monster.getTrickeryScore());
+            tv_trickery.setText(str_trickery);
+
+            // -------------------------------------------------------
 
         }
 

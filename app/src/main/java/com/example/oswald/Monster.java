@@ -94,10 +94,10 @@ public class Monster implements Parcelable {
         int[] int_datas = new int[N_GENERATIVE_STATS];
         int_datas[0] = FD;
         int_datas[1] = LVL;
-        int_datas[2] = skills.get(enumSKILLS.COMBAT);
-        int_datas[3] = skills.get(enumSKILLS.MYSTICAL);
-        int_datas[4] = skills.get(enumSKILLS.SUBTERFUGE);
-        int_datas[5] = skills.get(enumSKILLS.TRICKERY);
+        int_datas[2] = ORDERED_SKILLS.get(enumSKILLS.COMBAT);
+        int_datas[3] = ORDERED_SKILLS.get(enumSKILLS.MYSTICAL);
+        int_datas[4] = ORDERED_SKILLS.get(enumSKILLS.SUBTERFUGE);
+        int_datas[5] = ORDERED_SKILLS.get(enumSKILLS.TRICKERY);
         int_datas[6] = COUNTERS.get(enumSTATS.HP);
         int_datas[7] = COUNTERS.get(enumSTATS.EN);
         parcel.writeIntArray(int_datas);
@@ -138,12 +138,12 @@ public class Monster implements Parcelable {
     public String   type            ="";
 
 
-    public Monster(int iFD, int iLVL, HashMap<enumSTATS,Integer> iCounters, HashMap<enumSKILLS,Integer> iSkills)
+    public Monster(int iFD, int iLVL, HashMap<enumSTATS,Integer> iCounters, HashMap<enumSKILLS,Integer> iOrderedSkills)
     {
         FD                  = iFD;
         LVL                 = iLVL;
         COUNTERS            = iCounters;
-        ORDERED_SKILLS      = iSkills;
+        ORDERED_SKILLS      = iOrderedSkills;
 
         generate();
     }
@@ -157,6 +157,18 @@ public class Monster implements Parcelable {
         skills = new HashMap<>(4);
         Arrays.asList( enumSKILLS.values() ).forEach(skill -> skills.put( skill, ORDERED_SKILLS.get(skill) ));
 
+
+        for ( enumSKILLS skill : ORDERED_SKILLS.keySet() )
+        {
+            int rank = ORDERED_SKILLS.get(skill);
+            if (rank==1)
+                skills.replace(skill, FD + LVL + 4);
+            else if (rank==2)
+                skills.replace(skill, FD + LVL + 1);
+            else if (rank==3)
+                skills.replace(skill, FD + LVL - 2);
+        }
+
         attributes = new ArrayList<>( FD * 2 );
 
     }
@@ -166,4 +178,13 @@ public class Monster implements Parcelable {
         return this.name +"  <"+ this.type+">";
     }
 
+
+    public int getCombatScore()
+    { return skills.get(enumSKILLS.COMBAT); }
+    public int getMysticalScore()
+    {return skills.get(enumSKILLS.MYSTICAL);}
+    public int getSubterfugeScore()
+    {return skills.get(enumSKILLS.SUBTERFUGE);}
+    public int getTrickeryScore()
+    {return skills.get(enumSKILLS.TRICKERY);}
 }

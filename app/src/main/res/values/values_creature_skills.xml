@@ -14,4 +14,16 @@
 
     </string-array>
 
+    <integer name="creature_skill_value_combat">0</integer>
+    <integer name="creature_skill_value_mystical">0</integer>
+    <integer name="creature_skill_value_subterfuge">0</integer>
+    <integer name="creature_skill_value_trickery">0</integer>
+
+    <integer-array name="creature_skills_values">
+        <item>@integer/creature_skill_value_combat</item>
+        <item>@integer/creature_skill_value_mystical</item>
+        <item>@integer/creature_skill_value_subterfuge</item>
+        <item>@integer/creature_skill_value_trickery</item>
+    </integer-array>
+
 </resources>
