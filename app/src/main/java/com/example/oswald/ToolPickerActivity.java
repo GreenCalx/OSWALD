@@ -50,6 +50,23 @@ public class ToolPickerActivity extends AppCompatActivity
                     );
         }
 
+        Button button_player = (Button) findViewById(R.id.button_player);
+        if ( button_player != null )
+        {
+            button_player.setOnClickListener
+                    (
+                            new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    Intent intent = new Intent(ToolPickerActivity.this, PlayerActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }
+
+                    );
+        }
+
     }//! onCreate()
 
 }
